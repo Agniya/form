@@ -11,25 +11,25 @@ $(function(){
 	var file = {tag:'input',cls:'mleft10',type:'file'};
 	var checkbox = {tag:'input',cls:'',type:'checkbox'};
 	
-	/*создание объектов данных и их html*/
-		/*блок с вопросами*/
-		var dateOfBirth = new textField('js-dateOfBirth','Дата рождения',/([0-2]\d|3[01])\.(0\d|1[012])\.(\d{4})/, container,input,countQwestions(counter));
-		var city = new textField('js-city','Город, в котором вы живёте',/\D+/, container,input,countQwestions(counter));
-		var edu = new textField('js-edu','Вуз, факультет, специальность, кафедра',/\D+/, container,input,countQwestions(counter));
-		var termination = new textField('js-termination','Месяц и год окончания вуза',/(0\d|1[012])\.(\d{4})/, container,input,countQwestions(counter));
-		var englishLevel =  new checkboxGroup('js-englishLevel','Уровень владения английским языком',['Начальный','Средний','Свободное владение'],/\D+/,container,countQwestions(counter));
-		var expectations = new textField('js-expectations','Чего вы ожидаете от участия в Школе?',/\D+/, container,textarea,countQwestions(counter));
-		var knowFrom = new textField('js-knewFrom','Откуда вы о нас узнали?',/\D+/, container,textarea,countQwestions(counter));
+	/*СЃРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚РѕРІ РґР°РЅРЅС‹С… Рё РёС… html*/
+		/*Р±Р»РѕРє СЃ РІРѕРїСЂРѕСЃР°РјРё*/
+		var dateOfBirth = new textField('js-dateOfBirth','Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ',/([0-2]\d|3[01])\.(0\d|1[012])\.(\d{4})/, container,input,countQwestions(counter));
+		var city = new textField('js-city','Р“РѕСЂРѕРґ, РІ РєРѕС‚РѕСЂРѕРј РІС‹ Р¶РёРІС‘С‚Рµ',/\D+/, container,input,countQwestions(counter));
+		var edu = new textField('js-edu','Р’СѓР·, С„Р°РєСѓР»СЊС‚РµС‚, СЃРїРµС†РёР°Р»СЊРЅРѕСЃС‚СЊ, РєР°С„РµРґСЂР°',/\D+/, container,input,countQwestions(counter));
+		var termination = new textField('js-termination','РњРµСЃСЏС† Рё РіРѕРґ РѕРєРѕРЅС‡Р°РЅРёСЏ РІСѓР·Р°',/(0\d|1[012])\.(\d{4})/, container,input,countQwestions(counter));
+		var englishLevel =  new checkboxGroup('js-englishLevel','РЈСЂРѕРІРµРЅСЊ РІР»Р°РґРµРЅРёСЏ Р°РЅРіР»РёР№СЃРєРёРј СЏР·С‹РєРѕРј',['РќР°С‡Р°Р»СЊРЅС‹Р№','РЎСЂРµРґРЅРёР№','РЎРІРѕР±РѕРґРЅРѕРµ РІР»Р°РґРµРЅРёРµ'],/\D+/,container,countQwestions(counter));
+		var expectations = new textField('js-expectations','Р§РµРіРѕ РІС‹ РѕР¶РёРґР°РµС‚Рµ РѕС‚ СѓС‡Р°СЃС‚РёСЏ РІ РЁРєРѕР»Рµ?',/\D+/, container,textarea,countQwestions(counter));
+		var knowFrom = new textField('js-knewFrom','РћС‚РєСѓРґР° РІС‹ Рѕ РЅР°СЃ СѓР·РЅР°Р»Рё?',/\D+/, container,textarea,countQwestions(counter));
 				
-		/*блок с персональными данными*/
-		var addFile = new personalInfoBlock('js-resume','Резюме до 250 КБ',/\D+/, container,file);
-		var moiKrug = new personalInfoBlock('js-moiKrug','Ссылка на профиль в Моем Круге',/\w+\@\w+\.(\w{2,3})/, container,input);
-		var nameSurname = new personalInfoBlock('js-nameSurname','Имя,Фамилия',/\D+/, container,input);
-		var phone = new personalInfoBlock('js-phone','Телефон',/\d+/, container,input);
+		/*Р±Р»РѕРє СЃ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹РјРё РґР°РЅРЅС‹РјРё*/
+		var addFile = new personalInfoBlock('js-resume','Р РµР·СЋРјРµ РґРѕ 250 РљР‘',/\D+/, container,file);
+		var moiKrug = new personalInfoBlock('js-moiKrug','РЎСЃС‹Р»РєР° РЅР° РїСЂРѕС„РёР»СЊ РІ РњРѕРµРј РљСЂСѓРіРµ',/\w+\@\w+\.(\w{2,3})/, container,input);
+		var nameSurname = new personalInfoBlock('js-nameSurname','РРјСЏ,Р¤Р°РјРёР»РёСЏ',/\D+/, container,input);
+		var phone = new personalInfoBlock('js-phone','РўРµР»РµС„РѕРЅ',/\d+/, container,input);
 		var mail = new personalInfoBlock('js-mail','E-mail',/\w+\@\w+\.(\w{2,3})/, container,input);
-		var additionalInfo = new personalInfoBlock('js-additionalInfo','Дополнительная информация',/\D+/, container,textarea);
+		var additionalInfo = new personalInfoBlock('js-additionalInfo','Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ',/\D+/, container,textarea);
 	
-	/*создание объекта объектов для передачи в форму*/
+	/*СЃРѕР·РґР°РЅРёРµ РѕР±СЉРµРєС‚Р° РѕР±СЉРµРєС‚РѕРІ РґР»СЏ РїРµСЂРµРґР°С‡Рё РІ С„РѕСЂРјСѓ*/
 	var person = {};
 	person['dateOfBirth'] = dateOfBirth.Object;
 	person['city'] = city.Object;
@@ -49,32 +49,32 @@ $(function(){
 	person['mail'] = mail.Object;
 	person['additionalInfo'] = additionalInfo.Object;
 		
-	/*добавление заголовков*/
-	var aboutYou = addHeader("Заполните анкету",$('#1quest'));
-	var aboutYou = addHeader("Расскажите нам о себе",$('label[for='+addFile.Object.idJs+']').parent());
+	/*РґРѕР±Р°РІР»РµРЅРёРµ Р·Р°РіРѕР»РѕРІРєРѕРІ*/
+	var aboutYou = addHeader("Р—Р°РїРѕР»РЅРёС‚Рµ Р°РЅРєРµС‚Сѓ",$('#1quest'));
+	var aboutYou = addHeader("Р Р°СЃСЃРєР°Р¶РёС‚Рµ РЅР°Рј Рѕ СЃРµР±Рµ",$('label[for='+addFile.Object.idJs+']').parent());
 	
-	/*добавление селекта*/
+	/*РґРѕР±Р°РІР»РµРЅРёРµ СЃРµР»РµРєС‚Р°*/
 	var btnS = new btnSelect();
-	btnS.init(container,'Откуда Вы узнали о нашем предложении?','Выбрать','btn','js-knowFrom',function(){
-		$(btnS.selectOptions(['от HR-менеджера Яндекса','Я.Субботник','Yet another Conference',		
-		'на другой конференции','из поиска','по рекомендации','другое'],'know from')).insertAfter('#js-knowFrom');		
+	btnS.init(container,'РћС‚РєСѓРґР° Р’С‹ СѓР·РЅР°Р»Рё Рѕ РЅР°С€РµРј РїСЂРµРґР»РѕР¶РµРЅРёРё?','Р’С‹Р±СЂР°С‚СЊ','btn','js-knowFrom',function(){
+		$(btnS.selectOptions(['РѕС‚ HR-РјРµРЅРµРґР¶РµСЂР° РЇРЅРґРµРєСЃР°','РЇ.РЎСѓР±Р±РѕС‚РЅРёРє','Yet another Conference',		
+		'РЅР° РґСЂСѓРіРѕР№ РєРѕРЅС„РµСЂРµРЅС†РёРё','РёР· РїРѕРёСЃРєР°','РїРѕ СЂРµРєРѕРјРµРЅРґР°С†РёРё','РґСЂСѓРіРѕРµ'],'know from')).insertAfter('#js-knowFrom');		
 	},'click');
-	var confirmation = "Я даю свое согласие на передачу в ООО «ЯНДЕКС» резюме и/или анкеты, содержащих мои персональные данные, и согласен с тем, что они будут храниться в ООО «ЯНДЕКС» в течение 5 лет и будут обрабатываться исключительно для целей предложения мне вакансий группы компаний «ЯНДЕКС», в соответствии с Федеральным законом «О персональных данных»";
+	var confirmation = "РЇ РґР°СЋ СЃРІРѕРµ СЃРѕРіР»Р°СЃРёРµ РЅР° РїРµСЂРµРґР°С‡Сѓ РІ РћРћРћ В«РЇРќР”Р•РљРЎВ» СЂРµР·СЋРјРµ Рё/РёР»Рё Р°РЅРєРµС‚С‹, СЃРѕРґРµСЂР¶Р°С‰РёС… РјРѕРё РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹Рµ РґР°РЅРЅС‹Рµ, Рё СЃРѕРіР»Р°СЃРµРЅ СЃ С‚РµРј, С‡С‚Рѕ РѕРЅРё Р±СѓРґСѓС‚ С…СЂР°РЅРёС‚СЊСЃСЏ РІ РћРћРћ В«РЇРќР”Р•РљРЎВ» РІ С‚РµС‡РµРЅРёРµ 5 Р»РµС‚ Рё Р±СѓРґСѓС‚ РѕР±СЂР°Р±Р°С‚С‹РІР°С‚СЊСЃСЏ РёСЃРєР»СЋС‡РёС‚РµР»СЊРЅРѕ РґР»СЏ С†РµР»РµР№ РїСЂРµРґР»РѕР¶РµРЅРёСЏ РјРЅРµ РІР°РєР°РЅСЃРёР№ РіСЂСѓРїРїС‹ РєРѕРјРїР°РЅРёР№ В«РЇРќР”Р•РљРЎВ», РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ Р¤РµРґРµСЂР°Р»СЊРЅС‹Рј Р·Р°РєРѕРЅРѕРј В«Рћ РїРµСЂСЃРѕРЅР°Р»СЊРЅС‹С… РґР°РЅРЅС‹С…В»";
 	
-	/*добавление чекбокса согласия*/
+	/*РґРѕР±Р°РІР»РµРЅРёРµ С‡РµРєР±РѕРєСЃР° СЃРѕРіР»Р°СЃРёСЏ*/
 	addCheckbox(container,confirmation,'js-confirmation');
 
-	/*добавление кнопок отправки и очистки формы*/
-	var submitBtn = submitButton('Отправить',container,'js-submitBtn');
-	var resetBtn = submitButton('Очистить',container,'js-resetBtn');
+	/*РґРѕР±Р°РІР»РµРЅРёРµ РєРЅРѕРїРѕРє РѕС‚РїСЂР°РІРєРё Рё РѕС‡РёСЃС‚РєРё С„РѕСЂРјС‹*/
+	var submitBtn = submitButton('РћС‚РїСЂР°РІРёС‚СЊ',container,'js-submitBtn');
+	var resetBtn = submitButton('РћС‡РёСЃС‚РёС‚СЊ',container,'js-resetBtn');
 	var finalstep = addFinalBlock(container,'finalstep');
 	$('#finalstep').append($('#js-submitBtn'));
 	$('#finalstep').append($('#js-resetBtn'));
 	
-	/*создание экземпляра валидатора формы*/
+	/*СЃРѕР·РґР°РЅРёРµ СЌРєР·РµРјРїР»СЏСЂР° РІР°Р»РёРґР°С‚РѕСЂР° С„РѕСЂРјС‹*/
 	var validator = new Validator();
 	
-	/*создание экземпляра формы и передача ей валидатора, объекта данных и ДОМ узла*/
+	/*СЃРѕР·РґР°РЅРёРµ СЌРєР·РµРјРїР»СЏСЂР° С„РѕСЂРјС‹ Рё РїРµСЂРµРґР°С‡Р° РµР№ РІР°Р»РёРґР°С‚РѕСЂР°, РѕР±СЉРµРєС‚Р° РґР°РЅРЅС‹С… Рё Р”РћРњ СѓР·Р»Р°*/
 	var form = new Form(person,validator,container);
 });
 
